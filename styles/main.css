@@ -13,7 +13,7 @@ body {
 	height: 100%;
 	background: #333;
 	color: rgba(255,255,255,.9);
-	margin: 10px;
+	margin: 1em;
 }
 
 .loading {
@@ -34,17 +34,17 @@ header, article {
 }
 
 header {
-	margin-top: 70px;
+	margin-top: 2em;
 }
 
 header h1 {
-	font-size: 60px;
+	font-size: 2em;
 	line-height: 1;
 	display: none;
 }
 
 #output {
-	font-size: 48px;
+	font-size: 1.5em;
 	line-height: 1;
 	margin: 60px 0;
 }
@@ -61,7 +61,7 @@ header h1 {
 }
 
 #generate {
-	font-size: 50px;
+	font-size: 1.5em;
 	text-decoration: none;
 	color: rgba(255,255,255,.4);
 	padding: .3em;
@@ -82,4 +82,17 @@ footer {
 	margin: 12px 24px;
 	bottom: 0;
 	right: 0;
+}
+
+
+@media (min-width:700px) {
+	header h1 {
+		font-size: 5em;
+	}
+	#output {
+		font-size: 3em;
+
+	#generate {
+		font-size: 4em;
+	}
 }
