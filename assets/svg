@@ -1,0 +1,32 @@
+// No new file is created in this task. However, the 'wtf.js' file is modified as follows:
+
+// Import the 'fs' module at the top of the file
+const fs = require('fs');
+
+// Modify the 'generate' function
+function generate() {
+    var type, text, part, iter = 0, // Safety mechanism
+        idea = randomItem( templates ),
+        item = regex.exec( idea ),
+        copy = cloneCorpus();
+
+    while ( item && ++iter < 1000 ) {
+        type = item[ 0 ];
+        text = item[ 1 ];
+        part = randomItem( copy[ text ], true );
+        idea = idea.replace( type, part );
+        regex.lastIndex = 0;
+        item = regex.exec( idea );
+    }
+
+    // Read the SVG file that corresponds to the class of the character
+    var svgIcon = fs.readFileSync(`assets/svg/${text}.svg`, 'utf8');
+
+    // Update output to include the SVG icon
+    dom.generate.text( randomItem( responses ) );
+    dom.output.html('<p>' + idea + '.</p>' + svgIcon);
+
+    // Toggle animation
+    setTimeout( showOutput, 0 );
+    hideOutput();
+}
