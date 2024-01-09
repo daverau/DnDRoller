@@ -218,6 +218,7 @@ var WTF = (function() {
 
         var type, text, part, iter = 0, // Safety mechanism
             idea = randomItem( templates ),
+        icon = "assets/svg/" + text + ".svg";
             item = regex.exec( idea ),
             copy = cloneCorpus();
 
@@ -228,6 +229,7 @@ var WTF = (function() {
 
             part = randomItem( copy[ text ], true );
             idea = idea.replace( type, part );
+        idea = idea.replace("@icon", icon);
 
             regex.lastIndex = 0;
             item = regex.exec( idea );
@@ -236,7 +238,7 @@ var WTF = (function() {
         // Update output
 
         dom.generate.text( randomItem( responses ) );
-        dom.output.html('<p>' + idea + '.</p>');
+        dom.output.html('<p>' + idea + '. <img src="' + icon + '" alt="' + text + ' icon"></p>');
 
         // Toggle animation
 
